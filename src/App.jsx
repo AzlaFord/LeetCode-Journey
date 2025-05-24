@@ -1,11 +1,10 @@
 import NavBar from './navBarTEMP/navBar';
-import { Outlet } from 'react-router-dom'; // Importă Outlet
-
+import { Outlet } from 'react-router-dom'; 
 function App() {
   return (
     <>
-      <NavBar />          {/* Asta rămâne mereu afișată */}
-      <Outlet />          {/* Aici se încarcă pagina: HomePage, DiscussChat etc. */}
+      <NavBar />          
+      <Outlet />         
     </>
   );
 }

@@ -1,34 +1,79 @@
 import "./HomePage.css";
+import React, { useState } from 'react';
 
 function HomePage() {
+  const [inputValue, setInputValue] = useState('');
+  const [tasks, setTasks] = useState([]);
 
-    return (
-        <>
-            <div className="homePage">
-                <h1>Welcome to LeetCode Journey</h1>
-                <p>Track your progress, improve your coding skills, and prepare for interviews.</p>
-            </div>
-            <div className="homePageContent">
-                <div className="toDo">
-                    <h2>To-Do List</h2>
-                    <p>Manage your tasks and keep track of what you need to do.</p>
-                    <ul className="ParentTo-do">
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-                    </ul>
-                </div>
-                <div className="progress">
-                    <div className="progressTracker">
-                        <h2>Progress Tracker</h2>
-                        <p>Keep track of your solved problems and progress.</p>
-                    </div>
-                    <ul className="done">
-                        <li>asda</li>
-                        <li>asa</li>
-                    </ul>
-                </div>
-            </div>
-        </>
-    );
+  const handleAddTask = () => {
+    if (inputValue.trim() === "") return;
+
+    const newTask = {
+      id: Date.now(),  
+      text: inputValue
+    };
+
+    setTasks([...tasks, newTask]);
+    setInputValue("");
+  };
+    const handleRemoveTask = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    }
+
+  return (
+    <>
+      <div className="homePage">
+        <h1>Welcome to LeetCode Journey</h1>
+        <p>Track your progress, improve your coding skills, and prepare for interviews.</p>
+      </div>
+
+      <div className="homePageContent">
+        <div className="toDo">
+          <h2>To-Do List</h2>
+          <label htmlFor="myInput"></label>
+          <input
+            id="myInput"
+            className="inputToDo"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="To-Do something..."
+            required
+          />
+          <button
+            onClick={handleAddTask}
+            className="addButton primary-button"
+          >
+            Add Task
+          </button>
+
+          <ul className="ParentTo-do">
+            {tasks.map((task) => (
+              <li key={task.id}>
+                <h3>{task.text}</h3>
+                <button className="primary-button" onClick={() =>handleRemoveTask(task.id)}>Remove</button>
+                <hr />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="progress">
+          <div className="progressTracker">
+            <h2>Progress Tracker</h2>
+            <p>Keep track of your solved problems and progress.</p>
+          </div>
+          <ul className="done">
+            <li>asda</li>
+            <li>asa</li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default HomePage;
