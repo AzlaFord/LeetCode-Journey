@@ -1,30 +1,13 @@
-import { useState } from 'react'
-import NavBar from './navBarTEMP/navBar'
-import HomePage from './HomePage/HomePage.jsx';
-import DiscussChat from './Discuss/DiscussChat.jsx';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePage />,
-  },
-  {
-    path: '/discuss',
-    element: <DiscussChat />,
-  },
-])
+import NavBar from './navBarTEMP/navBar';
+import { Outlet } from 'react-router-dom'; // Importă Outlet
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <NavBar />
-      <RouterProvider router={router} />
+      <NavBar />          {/* Asta rămâne mereu afișată */}
+      <Outlet />          {/* Aici se încarcă pagina: HomePage, DiscussChat etc. */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

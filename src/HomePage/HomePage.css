@@ -1,0 +1,40 @@
+.homePageContent{
+    display: flex;
+    width: 60rem;
+    height: 40rem;
+    padding: 5px;
+    justify-content: space-evenly;   
+    gap: 2rem;
+}
+
+.toDo{
+    width: 30rem;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+.progress{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressTracker{
+    width: 30rem;   
+}
+.ParentTo-do{
+    border: solid 6px white;
+    padding: 5px;
+    max-height: 40rem;
+    border-style: double;
+}
+.done{
+    border: solid 6px white;
+    padding: 5px;
+    max-height: 40rem;
+    border-style: double; 
+}
+
+.done li{
+    text-decoration: underline;
+}
