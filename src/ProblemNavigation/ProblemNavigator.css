@@ -1,0 +1,17 @@
+code{
+    font-family: monospace;
+}
+.difficulty-easy{
+    color: green;
+}
+.difficulty-medium{
+    color: orange;
+}
+.difficulty-hard{
+    color: red;
+}
+.contain{
+    display: flex;
+    gap: 10px;
+    flex-direction: inline;
+}

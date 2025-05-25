@@ -1,5 +1,7 @@
 import "./HomePage.css";
 import React, { useState } from 'react';
+import NumeProblema from '../ProblemaNume/ProblemaNume.jsx';
+
 
 function HomePage() {
   const [inputValue, setInputValue] = useState('');
@@ -19,10 +21,12 @@ function HomePage() {
 
     setTasks([...tasks, newTask]);
     setInputValue("");
-  };
+    };
     const handleRemoveTask = (id) => {
         setTasks(tasks.filter(task => task.id !== id));
     }
+
+    const numeProblema = ['Two Sum', 'Add Two Numbers', 'Longest Substring Without Repeating Characters' ];
 
   return (
     <>
@@ -67,8 +71,12 @@ function HomePage() {
             <p>Keep track of your solved problems and progress.</p>
           </div>
           <ul className="done">
-            <li>asda</li>
-            <li>asa</li>
+            {numeProblema.map((problema,index) =>(
+              <li key={index}>
+                <NumeProblema name={problema} />
+              <hr />
+              </li>
+            ))}
           </ul>
         </div>
       </div>
