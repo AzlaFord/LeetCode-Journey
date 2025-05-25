@@ -86,25 +86,33 @@ const probleme = {
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/',  // baza site-ului: /LeetCode-Journey/
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        index: true, // homepage la /LeetCode-Journey/
         element: <HomePage />,
       },
       {
-        path: '/discuss',
+        path: 'discuss', // /LeetCode-Journey/discuss
         element: <DiscussChat />,
       },
       ...Object.entries(probleme).map(([key, problem]) => ({
-        path: `/problema/${key}`,
-        element: <ProblemNavigator name={problem.name} difficulty={problem.difficulty} description={problem.description} solved={problem.solved} />,
+        path: `problema/${encodeURIComponent(key)}`, // ex: /LeetCode-Journey/problema/Two%20Sum
+        element: (
+          <ProblemNavigator
+            name={problem.name}
+            difficulty={problem.difficulty}
+            description={problem.description}
+            solved={problem.solved}
+          />
+        ),
       })),
     ],
   },
 ]);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
