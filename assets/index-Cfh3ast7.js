@@ -120,22 +120,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   return dummyHead.next;
 }
-`},"Longest Substring Without Repeating Characters":{name:"Longest Substring Without Repeating Characters",difficulty:"Medium",description:"Given a string, find the length of the longest substring without repeating characters.",solved:`function lengthOfLongestSubstring(s) {
-  let seen = new Set();
-  let left = 0;
-  let maxLength = 0;
-
-  for (let right = 0; right < s.length; right++) {
-    // Dacă caracterul există deja în set, mutăm "left" până îl scoatem
-    while (seen.has(s[right])) {
-      seen.delete(s[left]);
-      left++;
-    }
-
-    seen.add(s[right]);
-    maxLength = Math.max(maxLength, right - left + 1);
-  }
-
-  return maxLength;
-}
-`}},oB=ek([{path:"/",element:ce.jsx(mk,{}),errorElement:ce.jsx(yk,{}),children:[{index:!0,element:ce.jsx(hk,{})},{path:"discuss",element:ce.jsx(Ek,{})},...Object.entries(iB).map(([a,r])=>({path:`problema/${encodeURIComponent(a)}`,element:ce.jsx(rB,{name:r.name,difficulty:r.difficulty,description:r.description,solved:r.solved})}))]}]);nO.createRoot(document.getElementById("root")).render(ce.jsx(V.StrictMode,{children:ce.jsx(fk,{router:oB})}));
+`},"Longest Substring Without Repeating Characters":{name:"Longest Substring Without Repeating Characters",difficulty:"Medium",description:"Given a string, find the length of the longest substring without repeating characters."}},oB=ek([{path:"/",element:ce.jsx(mk,{}),errorElement:ce.jsx(yk,{}),children:[{path:"/",element:ce.jsx(hk,{})},{path:"/discuss",element:ce.jsx(Ek,{})},...Object.entries(iB).map(([a,r])=>({path:`/problema/${a}`,element:ce.jsx(rB,{name:r.name,difficulty:r.difficulty,description:r.description,solved:r.solved})}))]}]);nO.createRoot(document.getElementById("root")).render(ce.jsx(V.StrictMode,{children:ce.jsx(fk,{router:oB})}));
