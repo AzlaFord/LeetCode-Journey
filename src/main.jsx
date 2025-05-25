@@ -62,57 +62,31 @@ const probleme = {
     name: 'Longest Substring Without Repeating Characters',
     difficulty: 'Medium',
     description: 'Given a string, find the length of the longest substring without repeating characters.',
-    solved:`function lengthOfLongestSubstring(s) {
-  let seen = new Set();
-  let left = 0;
-  let maxLength = 0;
-
-  for (let right = 0; right < s.length; right++) {
-    // Dacă caracterul există deja în set, mutăm "left" până îl scoatem
-    while (seen.has(s[right])) {
-      seen.delete(s[left]);
-      left++;
-    }
-
-    seen.add(s[right]);
-    maxLength = Math.max(maxLength, right - left + 1);
-  }
-
-  return maxLength;
-}
-`
+    
   },
 }
 
 const router = createBrowserRouter([
   {
-    path: '/',  // baza site-ului: /LeetCode-Journey/
+    path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true, // homepage la /LeetCode-Journey/
+        path: '/LeetCode-Journey',
         element: <HomePage />,
       },
       {
-        path: 'discuss', // /LeetCode-Journey/discuss
+        path: '/LeetCode-Journey/discuss',
         element: <DiscussChat />,
       },
       ...Object.entries(probleme).map(([key, problem]) => ({
-        path: `problema/${encodeURIComponent(key)}`, // ex: /LeetCode-Journey/problema/Two%20Sum
-        element: (
-          <ProblemNavigator
-            name={problem.name}
-            difficulty={problem.difficulty}
-            description={problem.description}
-            solved={problem.solved}
-          />
-        ),
+        path: `/LeetCode-Journey/problema/${key}`,
+        element: <ProblemNavigator name={problem.name} difficulty={problem.difficulty} description={problem.description} solved={problem.solved} />,
       })),
     ],
   },
 ]);
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
