@@ -138,4 +138,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   return maxLength;
 }
-`}},oB=ek([{path:"/",element:ce.jsx(mk,{}),errorElement:ce.jsx(yk,{}),children:[{index:!0,element:ce.jsx(hk,{})},{path:"discuss",element:ce.jsx(Ek,{})},...Object.entries(iB).map(([a,r])=>({path:`problema/${encodeURIComponent(a)}`,element:ce.jsx(rB,{name:r.name,difficulty:r.difficulty,description:r.description,solved:r.solved})}))]}]);nO.createRoot(document.getElementById("root")).render(ce.jsx(V.StrictMode,{children:ce.jsx(fk,{router:oB})}));
+`}},oB=ek([{path:"/",element:ce.jsx(mk,{}),errorElement:ce.jsx(yk,{}),children:[{path:"/",element:ce.jsx(hk,{})},{path:"/discuss",element:ce.jsx(Ek,{})},...Object.entries(iB).map(([a,r])=>({path:`/problema/${a}`,element:ce.jsx(rB,{name:r.name,difficulty:r.difficulty,description:r.description,solved:r.solved})}))]}]);nO.createRoot(document.getElementById("root")).render(ce.jsx(V.StrictMode,{children:ce.jsx(fk,{router:oB})}));
