@@ -30,7 +30,7 @@ function HomePage() {
     try {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     } catch (e) {
-      // handle error if needed
+      console.error("Failed to save tasks to localStorage:", e);
     }
   }, [tasks]);
 
@@ -82,8 +82,6 @@ function HomePage() {
             {tasks.map((task) => (
               <li key={task.id}>
                 <h3>{task.text}</h3>
-                <button className="primary-button" onClick={() => handleRemoveTask(task.id)}>Remove</button>
-                <hr />
               </li>
             ))}
           </ul>
@@ -98,7 +96,6 @@ function HomePage() {
             {numeProblema.map((problema, index) => (
               <li key={index}>
                 <NumeProblema name={problema} />
-                <hr />
               </li>
             ))}
           </ul>

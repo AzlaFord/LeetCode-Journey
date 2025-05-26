@@ -27,12 +27,14 @@
     padding: 5px;
     max-height: 40rem;
     border-style: double;
+        background-color: rgb(43, 43, 43)
 }
 .done{
     border: solid 6px white;
     padding: 5px;
     max-height: 40rem;
     border-style: double; 
+    background-color: rgb(43, 43, 43)
 }
 
 .done li{
