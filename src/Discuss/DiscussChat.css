@@ -4,7 +4,8 @@
 }
 
 .chat{
-    display: flex;
+    gap:1rem;
+    display: inline-block;
     justify-content: left; 
     height: 90vh;
     width: 65vw;
@@ -19,4 +20,24 @@
     align-items: center;
     background-color: rgb(43, 43, 43);
     margin: 0.5em;
+}
+.message{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin:1rem;
+    padding-left: 0.5rem;
+    border: solid 1px rgb(255, 255, 255);
+    max-width: 40vw;
+    border-radius: 0.5rem;
+}
+.inputcont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendButton{
+    height: 5.5vh;
+    width: 5.5vw;
 }
