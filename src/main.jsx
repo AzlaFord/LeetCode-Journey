@@ -5,7 +5,6 @@ import App from './App.jsx';
 import HomePage from './HomePage/HomePage.jsx';
 import DiscussChat from './Discuss/DiscussChat.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './ErrorPage/ErrorPage.jsx';
 import ProblemNavigator from './ProblemNavigation/ProblemNavigation.jsx';
 
 const probleme = {
@@ -70,7 +69,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: '/LeetCode-Journey',
