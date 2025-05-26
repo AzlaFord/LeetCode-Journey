@@ -1,8 +1,13 @@
+import "./DiscussChat.css";
+
 function DiscussChat(){
     return (
-        <div className="discuss-chat">
-        <h2>Discuss Chat</h2>
-        <p>This is where the discussion chat will be implemented.</p>
+        <div className="blockChat">
+            <div className="chat">
+                asdad
+            </div>
+            <input className="chatbar" type="text" />
+
         </div>
     );
 }
