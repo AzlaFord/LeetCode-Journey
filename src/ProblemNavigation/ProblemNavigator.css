@@ -15,3 +15,19 @@ code{
     gap: 10px;
     flex-direction: inline;
 }
+.problemsolve{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+}
+.probleminfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+}
+.problema{
+    width: 75vw;
+}

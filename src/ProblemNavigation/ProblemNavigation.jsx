@@ -19,7 +19,7 @@ function ProblemNavigator(props) {
         <h3>{props.description}</h3>
       </div>
       <div className="problemsolve">
-        <SyntaxHighlighter language="javascript" style={darcula}>
+        <SyntaxHighlighter className="problema" language="javascript" style={darcula}>
           {props.solved}
         </SyntaxHighlighter>
       </div>

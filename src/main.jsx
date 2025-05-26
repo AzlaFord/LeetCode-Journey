@@ -61,7 +61,24 @@ const probleme = {
     name: 'Longest Substring Without Repeating Characters',
     difficulty: 'Medium',
     description: 'Given a string, find the length of the longest substring without repeating characters.',
-    
+    solved: `function lengthOfLongestSubstring(s) {
+  let charSet = new Set();
+  let st = 0;
+  let maxLen = 0;
+
+  for (let end = 0; end < s.length; end++) {
+    while (charSet.has(s[end])) {
+      charSet.delete(s[st]); // scoatem caractere duplicate
+      st++;
+    }
+
+    charSet.add(s[end]);
+    maxLen = Math.max(maxLen, end - st + 1);
+  }
+
+  return maxLen;
+}
+`
   },
 }
 
