@@ -1,0 +1,21 @@
+.chucknor{
+    height: 30vh;
+    width: 25vw;
+}
+
+.ChuckSays{
+    border:solid 1px white;
+    height: 21vh;
+    display: flex;
+    align-items: center;
+    padding:2rem;
+    width: 40vw;
+    border-radius: 1%;
+    background-color: rgb(43, 43, 43);
+}
+.chuckblock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}

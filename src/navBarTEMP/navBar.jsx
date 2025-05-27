@@ -8,7 +8,7 @@ function NavBar() {
             <ul className="navBarList">
                 <li><Link to="/LeetCode-Journey/">Problems</Link></li>
                 <li><Link to="/LeetCode-Journey/Discuss">Discuss</Link></li>
-                <li><Link to="/LeetCode-Journey/Interview">Interview</Link></li>
+                <li><Link to="/LeetCode-Journey/ChuckRoute">Chuck</Link></li>
             </ul>
         </div>
     );

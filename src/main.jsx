@@ -6,6 +6,7 @@ import HomePage from './HomePage/HomePage.jsx';
 import DiscussChat from './Discuss/DiscussChat.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProblemNavigator from './ProblemNavigation/ProblemNavigation.jsx';
+import ChuckRoute from './ChuckRoute/ChuckRoute.jsx';
 
 const probleme = {
   'Two Sum': {
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
       {
         path: '/LeetCode-Journey/discuss',
         element: <DiscussChat />,
+      },
+      {
+        path: '/LeetCode-Journey/ChuckRoute',
+        element: <ChuckRoute/>
       },
       ...Object.entries(probleme).map(([key, problem]) => ({
         path: `/LeetCode-Journey/problema/${key}`,

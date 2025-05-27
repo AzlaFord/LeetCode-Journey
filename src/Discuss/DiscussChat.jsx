@@ -11,7 +11,7 @@ function DiscussChat(){
     const handleInputChange = (e) => {
         setChatInput(e.target.value);
     }
-
+    
     const sendInput = () => {
         if (chatInput.trim() !== "") {
             let newMessages = [...messages, chatInput];
